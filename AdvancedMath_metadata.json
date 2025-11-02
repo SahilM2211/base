@@ -1,0 +1,136 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_a",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_b",
+						"type": "uint256"
+					}
+				],
+				"name": "divider",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "quotient",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "error",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_a",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_b",
+						"type": "uint256"
+					}
+				],
+				"name": "multiplier",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "product",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "error",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "A contract for performing multiplication and division on unsigned integers with explicit checks for common arithmetic errors.",
+			"kind": "dev",
+			"methods": {
+				"divider(uint256,uint256)": {
+					"details": "Solidity reverts on division by zero by default (since 0.8.0), but this function provides a clear error flag instead of a revert.",
+					"params": {
+						"_a": "The numerator.",
+						"_b": "The denominator."
+					},
+					"returns": {
+						"error": "A boolean flag that is true if division by zero was attempted.",
+						"quotient": "The result of the division."
+					}
+				},
+				"multiplier(uint256,uint256)": {
+					"details": "To prevent overflow, it checks if `_a * _b` would exceed the maximum value for a uint. If an overflow is detected, it returns an error.",
+					"params": {
+						"_a": "The first number.",
+						"_b": "The second number."
+					},
+					"returns": {
+						"error": "A boolean flag that is true if an overflow occurred.",
+						"product": "The result of the multiplication."
+					}
+				}
+			},
+			"title": "AdvancedMath",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"divider(uint256,uint256)": {
+					"notice": "Divides two unsigned integers, checking for division by zero."
+				},
+				"multiplier(uint256,uint256)": {
+					"notice": "Multiplies two unsigned integers, checking for overflow."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"base-learn/BasicMath.sol": "AdvancedMath"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"base-learn/BasicMath.sol": {
+			"keccak256": "0x6089a12a45e14bc1ac8fca8772abef863bb93e95f24a0b788d375597ca5ebf71",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c68e99ec2567602299c23818bb8ec959c8ae96f5d78e647ce97289700ae6fc5e",
+				"dweb:/ipfs/QmNbitPBxzJFZSrDB4XEwQp3nquFVymrxTyGMMAs8aJ9hC"
+			]
+		}
+	},
+	"version": 1
+}
