@@ -1,0 +1,120 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "time",
+						"type": "uint256"
+					}
+				],
+				"name": "AfterHours",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_time",
+						"type": "uint256"
+					}
+				],
+				"name": "doNotDisturb",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_number",
+						"type": "uint256"
+					}
+				],
+				"name": "fizzBuzz",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"doNotDisturb(uint256)": {
+					"params": {
+						"_time": "The time in 24-hour format (e.g., 1330 for 1:30 PM)"
+					}
+				},
+				"fizzBuzz(uint256)": {
+					"params": {
+						"_number": "Number to check"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"AfterHours(uint256)": [
+					{
+						"notice": "Custom error for after-hours access"
+					}
+				]
+			},
+			"kind": "user",
+			"methods": {
+				"doNotDisturb(uint256)": {
+					"notice": "Responds based on the given time of day"
+				},
+				"fizzBuzz(uint256)": {
+					"notice": "Returns \"Fizz\", \"Buzz\", \"FizzBuzz\", or \"Splat\" based on divisibility"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"base-learn/controlstructures.sol": "ControlStructures"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"base-learn/controlstructures.sol": {
+			"keccak256": "0xccae33313ed299b0976fe7cdf863e059c421f56df20b0f8a3270df8d4ba1e423",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://56a312632234ce4ff196903ff20be4b274b19022ad4d9fc499a735d330022a08",
+				"dweb:/ipfs/QmVqnJt2x1H6BF87MEj7zKNnFi7oYzY6orvpRFMs7FjWjC"
+			]
+		}
+	},
+	"version": 1
+}
