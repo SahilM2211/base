@@ -1,0 +1,152 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newNote",
+						"type": "string"
+					}
+				],
+				"name": "NoteUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getMyNote",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "getNoteOf",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "notes",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_note",
+						"type": "string"
+					}
+				],
+				"name": "setNote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "A super-simple contract that lets anyone store one string (note) tied to their address. This is designed to be extremely easy to deploy because its constructor takes NO arguments.",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "The constructor is empty. This is what makes it so easy to deploy. You don't need to provide any arguments."
+				},
+				"getMyNote()": {
+					"details": "Retrieves the note saved by the person calling the function."
+				},
+				"getNoteOf(address)": {
+					"details": "Retrieves the note saved by any specific address."
+				},
+				"setNote(string)": {
+					"details": "Saves or updates a note for the person calling the function.",
+					"params": {
+						"_note": "The new note you want to save."
+					}
+				}
+			},
+			"title": "DigitalNotepad",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"base mainnet/Digital Notepad Contract.sol": "DigitalNotepad"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"base mainnet/Digital Notepad Contract.sol": {
+			"keccak256": "0x7f4bab761ea1a879640aa51724ccae06e277c8f6d4dec25927a7152d2e787e4c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1388978eadf49dbe3c9f2589b85df12611506a8274572b48780dcc24455d7ab8",
+				"dweb:/ipfs/Qma1rXykfiYSmNir3ipdh9JzER9bNen4RadqiAw37eMkMy"
+			]
+		}
+	},
+	"version": 1
+}
