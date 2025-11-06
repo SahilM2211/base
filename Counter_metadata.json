@@ -1,0 +1,139 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "initialCount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newCount",
+						"type": "uint256"
+					}
+				],
+				"name": "CountChanged",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "count",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decrement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "increment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "A simple smart contract that allows for incrementing and decrementing a counter. This contract serves as another basic example for deployment on the Base network.",
+			"events": {
+				"CountChanged(uint256)": {
+					"details": "Emitted when the count is changed.",
+					"params": {
+						"newCount": "The new value of the counter."
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Sets the initial count when the contract is deployed.",
+					"params": {
+						"initialCount": "The initial value for the counter."
+					}
+				},
+				"decrement()": {
+					"details": "Decrements the counter by 1. It will revert the transaction if the count is already 0 to prevent underflow."
+				},
+				"getCount()": {
+					"details": "Retrieves the current count.",
+					"returns": {
+						"_0": "The current value of the counter."
+					}
+				},
+				"increment()": {
+					"details": "Increments the counter by 1."
+				}
+			},
+			"title": "Counter",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"base mainnet/counter_smart_contract.sol": "Counter"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"base mainnet/counter_smart_contract.sol": {
+			"keccak256": "0x36e226df45ddfd57e6dc9cab12ccccddc42bd4c44be964f110e696b39814e91a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f4237d62f0bf4d1a71835e726e16f9ae552e73c3be5adbd0de01ed856ce596ff",
+				"dweb:/ipfs/QmQdcunVKYGiXBa83HcXJ82cvG8pFvhPRvvkyCJzyn4DK9"
+			]
+		}
+	},
+	"version": 1
+}
