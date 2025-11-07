@@ -1,0 +1,195 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_idNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_managerId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_annualSalary",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_idNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "addReport",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "annualSalary",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAnnualCost",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getReports",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "idNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "managerId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "reports",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "resetReports",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"base-learn/multiple/EngineeringManager.sol": "EngineeringManager"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"base-learn/multiple/Employee.sol": {
+			"keccak256": "0xa79f2017048c8ab77fb6f078fab3099804b14e9457153506f2c62910d5ad99a7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://98ead147e4b867d1550e40d87cdc07a6e69f8b7641a17c1af31a6daef1389fe8",
+				"dweb:/ipfs/QmUsJTawvjMRB4t5ivtmtzvJoUDZXkvvwEzsvKrW31UhLa"
+			]
+		},
+		"base-learn/multiple/EngineeringManager.sol": {
+			"keccak256": "0xed5f921ee687051b48fce502c2f6fd0407d45ea30f8a44dfa99d23004eb06aa0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d5baeb05c9eb57871b84ffa6571e4d2c343349c099f06bce496fe41edc115757",
+				"dweb:/ipfs/QmPME1kFg6RxsnAi2cibWX9fdhuNW2Gvevh6buLR1H1tjB"
+			]
+		},
+		"base-learn/multiple/Salaried.sol": {
+			"keccak256": "0xdb0827fbf02d094eab1873ca4e70067e0d5ab9fa3cce098e0c56261121fc014d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f5ab8307eb13106699477cc7a8db5b4b1ed89346b19f7131f89cfcb23be87445",
+				"dweb:/ipfs/QmV8SeB8Et8cQaEy4hHixNu72283hh2s9aohqmCWNhKq3w"
+			]
+		},
+		"base-learn/multiple/manager.sol": {
+			"keccak256": "0xad4286076e233dd2589867aef2ae8dff534fe333a9dcd5ead0e9db37aedf9a0b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://57e8daa1cbf7399dd7e4a707b9390c9aecc7a767936ec03a9866a976d02c9a66",
+				"dweb:/ipfs/QmXsxjK1q81CKfJFYCESp91jSMe2Qjp3AFAEH5tNkEcS7N"
+			]
+		}
+	},
+	"version": 1
+}
