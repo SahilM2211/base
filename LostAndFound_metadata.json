@@ -1,0 +1,284 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "itemId",
+						"type": "string"
+					}
+				],
+				"name": "ItemCancelled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "itemId",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "finder",
+						"type": "address"
+					}
+				],
+				"name": "ItemFound",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "itemId",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "reward",
+						"type": "uint256"
+					}
+				],
+				"name": "ItemRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "itemId",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "finder",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "RewardPaid",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_itemId",
+						"type": "string"
+					}
+				],
+				"name": "cancelItem",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_itemId",
+						"type": "string"
+					}
+				],
+				"name": "confirmAndPay",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_itemId",
+						"type": "string"
+					}
+				],
+				"name": "getItemDetails",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "reward",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isFound",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "finder",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "items",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "reward",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "finder",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isFound",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_itemId",
+						"type": "string"
+					}
+				],
+				"name": "registerItem",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_itemId",
+						"type": "string"
+					}
+				],
+				"name": "reportFound",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "A decentralized registry for lost items. Owners lock rewards. Finders report items. Owners release rewards. deployment: Easy (No arguments).",
+			"kind": "dev",
+			"methods": {
+				"cancelItem(string)": {
+					"details": "Owner can cancel if they find it themselves or want to change the reward."
+				},
+				"confirmAndPay(string)": {
+					"details": "Owner calls this AFTER getting the item back to pay the finder."
+				},
+				"registerItem(string)": {
+					"details": "Register a lost item and lock the reward.",
+					"params": {
+						"_itemId": "A unique string on your physical tag (e.g., \"KEY-55\")."
+					}
+				},
+				"reportFound(string)": {
+					"details": "A Finder calls this to signal they have the item.",
+					"params": {
+						"_itemId": "The ID found on the physical item."
+					}
+				}
+			},
+			"title": "LostAndFound",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"arc_testnet/Lost and Found Contract.sol": "LostAndFound"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"arc_testnet/Lost and Found Contract.sol": {
+			"keccak256": "0xfcb9b27597b619c05cb6c316e56e08a8516ac0d53ab1b68ed16d0194d0915d14",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0131aa407e8685c075dbdc83f3c69b5157ab224083ff32a458b13039231231c1",
+				"dweb:/ipfs/QmWVEqLN9WDBoPKZbNkUNx6EuaWvrJSbSe2tQ77mzWwCxy"
+			]
+		}
+	},
+	"version": 1
+}
