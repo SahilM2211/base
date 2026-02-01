@@ -1,0 +1,112 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "userStake",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalPool",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "winningPool",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "feeBasis",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "refBasis",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "hasReferrer",
+						"type": "bool"
+					}
+				],
+				"name": "calculate",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "netPayout",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalFee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "adminShare",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "refShare",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct LucidMath.Distribution",
+						"name": "dist",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"lucid-Markets_v2/LucidMath.sol": "LucidMath"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"lucid-Markets_v2/LucidMath.sol": {
+			"keccak256": "0x61860a6ce768027a99b430713be6972af50dd6aba2f3f48d536c4624c72448c9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://122b53afc1c7dbecdae10380ed3d9693b8e64fb1df65fdf144ed634a32349362",
+				"dweb:/ipfs/QmYeQQj4CH1rZYHGe244SucSz7BurSZzAAve3CgvxsWBZy"
+			]
+		}
+	},
+	"version": 1
+}
