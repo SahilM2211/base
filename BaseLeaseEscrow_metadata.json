@@ -1,0 +1,487 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "DisputeRaised",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tenantShare",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "landlordShare",
+						"type": "uint256"
+					}
+				],
+				"name": "DisputeResolved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "landlord",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "tenant",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "deposit",
+						"type": "uint256"
+					}
+				],
+				"name": "LeaseCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "LeaseFunded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "RefundAgreed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tenantShare",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "landlordShare",
+						"type": "uint256"
+					}
+				],
+				"name": "RefundProposed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "RentPaid",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tenant",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_arbiter",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_depositAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_rentAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "createLease",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "fundDeposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getLease",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "landlord",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "tenant",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "arbiter",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "depositAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rentAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "proposedTenantShare",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "proposedLandlordShare",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum BaseLeaseEscrow.LeaseState",
+								"name": "state",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct BaseLeaseEscrow.Lease",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "leaseCounter",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "leases",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "landlord",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tenant",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "arbiter",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "depositAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rentAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "proposedTenantShare",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "proposedLandlordShare",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum BaseLeaseEscrow.LeaseState",
+						"name": "state",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "payRent",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tenantShare",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_landlordShare",
+						"type": "uint256"
+					}
+				],
+				"name": "proposeDeduction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "raiseDispute",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tenantShare",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_landlordShare",
+						"type": "uint256"
+					}
+				],
+				"name": "resolveDispute",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "tenantAgree",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Enterprise-grade smart contract for rental security deposits and rent tracking. * Features: - Immutable Rent Receipts. - Two-party consent required for deposit deductions. - Third-party arbitration fallback for disputes. - Reentrancy protection for all financial transfers.",
+			"kind": "dev",
+			"methods": {
+				"createLease(address,address,uint256,uint256)": {
+					"details": "Landlord creates the lease terms."
+				},
+				"fundDeposit(uint256)": {
+					"details": "Tenant reviews the terms and funds the security deposit to lock the contract."
+				},
+				"payRent(uint256)": {
+					"details": "Tenant pays monthly rent. Funds are routed instantly to Landlord. This creates an immutable blockchain receipt of rent payment."
+				},
+				"proposeDeduction(uint256,uint256,uint256)": {
+					"details": "Lease ends. Landlord proposes how the deposit should be split. e.g., Full refund, or a deduction for damages."
+				},
+				"raiseDispute(uint256)": {
+					"details": "Tenant disagrees with deductions. Freezes the contract for Arbitration."
+				},
+				"resolveDispute(uint256,uint256,uint256)": {
+					"details": "Neutral Arbiter resolves the dispute with final binding split."
+				},
+				"tenantAgree(uint256)": {
+					"details": "Tenant agrees to the proposed split. Funds are distributed safely."
+				}
+			},
+			"title": "BaseLeaseEscrow",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"base mainnet/Lease Escrow Contract.sol": "BaseLeaseEscrow"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"base mainnet/Lease Escrow Contract.sol": {
+			"keccak256": "0xe946607547d3a9346d58cd35ce295c500afaf04215dccd4238bc9ce0130d0522",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a059724dd732832ccddd31f446d544b2cda0114eafeda1e97fa42880e2b1734",
+				"dweb:/ipfs/QmSi6EEDsuBN56MXdhWRhy1X9D8EgmufQveUxLBXh6q4vm"
+			]
+		}
+	},
+	"version": 1
+}
