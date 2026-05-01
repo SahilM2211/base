@@ -1,0 +1,471 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "raisedBy",
+						"type": "address"
+					}
+				],
+				"name": "DisputeRaised",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "GoodsApprovedAndPaid",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "reason",
+						"type": "string"
+					}
+				],
+				"name": "GoodsRejected",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "GoodsShipped",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "TradeDrafted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "TradeFunded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					}
+				],
+				"name": "TradeRefunded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tradeId",
+						"type": "uint256"
+					}
+				],
+				"name": "approveGoods",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_seller",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_inspector",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_goodsDescription",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amountWei",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_daysToExpiry",
+						"type": "uint256"
+					}
+				],
+				"name": "draftTrade",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tradeId",
+						"type": "uint256"
+					}
+				],
+				"name": "fundTrade",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getTrade",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "buyer",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "seller",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "inspector",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "goodsDescription",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "expiryDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum BaseTrade.TradeState",
+								"name": "state",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct BaseTrade.Trade",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tradeId",
+						"type": "uint256"
+					}
+				],
+				"name": "markShipped",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tradeId",
+						"type": "uint256"
+					}
+				],
+				"name": "recallExpiredFunds",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tradeId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_reason",
+						"type": "string"
+					}
+				],
+				"name": "rejectGoods",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tradeId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_buyerShare",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_sellerShare",
+						"type": "uint256"
+					}
+				],
+				"name": "resolveDispute",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tradeCounter",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "trades",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "inspector",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "goodsDescription",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expiryDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum BaseTrade.TradeState",
+						"name": "state",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Enterprise-grade Decentralized Letter of Credit (Trade Finance). Secures international imports/exports by locking buyer funds in escrow, releasing them only when a designated Inspector/Freight Forwarder verifies delivery.",
+			"kind": "dev",
+			"methods": {
+				"approveGoods(uint256)": {
+					"details": "4a. Happy Path: Inspector verifies goods at destination port. Funds auto-release to seller."
+				},
+				"draftTrade(address,address,string,uint256,uint256)": {
+					"details": "1. Buyer (Importer) drafts the commercial invoice / trade agreement."
+				},
+				"fundTrade(uint256)": {
+					"details": "2. Buyer locks the funds in the contract (The \"Letter of Credit\")."
+				},
+				"markShipped(uint256)": {
+					"details": "3. Seller (Exporter) marks the goods as shipped after verifying funds are locked."
+				},
+				"recallExpiredFunds(uint256)": {
+					"details": "6. Time-lock protection: If goods never arrive by expiry date, Buyer can recall funds."
+				},
+				"rejectGoods(uint256,string)": {
+					"details": "4b. Sad Path: Inspector rejects goods (damaged/counterfeit). Dispute begins."
+				},
+				"resolveDispute(uint256,uint256,uint256)": {
+					"details": "5. Inspector resolves dispute by splitting funds (e.g., 50% refund, 50% pay for partial damage)."
+				}
+			},
+			"title": "BaseTrade Protocol",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth mainnet/Global Trade Protocol.sol": "BaseTrade"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		".deps/npm/@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"eth mainnet/Global Trade Protocol.sol": {
+			"keccak256": "0x03dbc9dd294803a9ccf371a40f3427b685a003a4d96dcbfa32a995958e92f670",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3f97baafd39ee99f29fdfe506eb178b5e4a7bd312cffb11b999a61ae99f6e34f",
+				"dweb:/ipfs/QmauxhJs2DnLNF7aSj9HTD5f5QLf3427p2emRUcfXnfUMH"
+			]
+		}
+	},
+	"version": 1
+}
